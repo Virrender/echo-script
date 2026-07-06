@@ -1,0 +1,8 @@
+# python
+app/recordings/
+app/__pycache__/
+myvenv/
+
+
+# Node
+node_modules

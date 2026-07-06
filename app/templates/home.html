@@ -1,0 +1,16 @@
+{% extends "base.html"%} {% block title %} Home {% endblock %} {% block content
+%}
+
+<div>
+  <div>
+    <button id="start-btn">Start Recording</button>
+  </div>
+
+  <div>
+    <button id="stop-btn" disabled>Stop Recording</button>
+  </div>
+</div>
+
+{% endblock %} {% block scripts %}
+<script src="{{ request.url_for('static', path='js/recording.js') }}"></script>
+{% endblock %}

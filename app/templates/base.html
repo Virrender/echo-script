@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Echo Script {% endblock %}</title>
+
+    <link
+      rel="stylesheet"
+      href="{{request.url_for('static', path='css/output.css')}}"
+    />
+  </head>
+
+  <body>
+    <main>{% block content %} {% endblock %}</main>
+
+    {% block scripts %} {% endblock %}
+  </body>
+</html>
