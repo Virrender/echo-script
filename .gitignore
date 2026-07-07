@@ -3,6 +3,8 @@ app/recordings/
 app/__pycache__/
 myvenv/
 
+#vscode
+.vscode/
 
 # Node
 node_modules

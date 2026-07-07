@@ -1,5 +1,6 @@
-{% extends "base.html"%} {% block title %} Home {% endblock %} {% block content
-%}
+{% extends "base.html"%} 
+{% block title %} Home {% endblock %} 
+{% block content%}
 
 <div>
   <div>
@@ -11,6 +12,8 @@
   </div>
 </div>
 
-{% endblock %} {% block scripts %}
+{% endblock %} 
+
+{% block scripts %}
 <script src="{{ request.url_for('static', path='js/recording.js') }}"></script>
 {% endblock %}

@@ -39,8 +39,7 @@ function stopRecording() {
     });
 
     const formData = new FormData();
-    const filename = `recording-${Date.now()}.webm`;
-    formData.append("audio", blob, filename);
+    formData.append("audio", blob);
 
     const response = await fetch("/upload", {
       method: "POST",
