@@ -1,25 +1,28 @@
-const startButton = document.getElementById("start-btn");
-const stopButton = document.getElementById("stop-btn");
+
+const recordButton = document.getElementById("record-btn");
+
 
 let mediaRecorder;
 let recordedChunks = [];
+let isRecording = false;
 
-startButton.addEventListener("click", async () => {
-  const stream = await navigator.mediaDevices.getUserMedia({
-    audio: true,
-  });
+recordButton.addEventListener("click", async () => {
+  if (!isRecording){
+    const stream = await navigator.mediaDevices.getUserMedia({
+      audio: true,
+    });
+    startRecording(stream);
+    isRecording=true;
+    recordButton.textContent="🛑"
+  } 
+  else {
+    stopRecording();
 
-  startRecording(stream);
-  startButton.disabled = true;
-  stopButton.disabled = false;
-});
+    isRecording=false;
+    recordButton.textContent="🎙️"
+  }
+})
 
-stopButton.addEventListener("click", () => {
-  stopRecording();
-
-  startButton.disabled = false;
-  stopButton.disabled = true;
-});
 
 function startRecording(stream) {
   mediaRecorder = new MediaRecorder(stream);

@@ -2,9 +2,8 @@ from fastapi import FastAPI
 from .routes import recordings
 from pathlib import Path
 from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
-
 from .database import Base, engine
+
 
 BASE_DIR = Path(__file__).parent
 

@@ -1,18 +1,25 @@
-{% extends "base.html"%} 
-{% block title %} Home {% endblock %} 
-{% block content%}
+{% extends "base.html" %}
 
-<div>
-  <div>
-    <button id="start-btn">Start Recording</button>
-  </div>
+{% block title %}Home{% endblock %}
 
-  <div>
-    <button id="stop-btn" disabled>Stop Recording</button>
-  </div>
+{% block content %}
+
+<div class="flex min-h-[80vh] flex-col items-center justify-center gap-6">
+
+    <button
+        id="record-btn"
+        class="flex h-32 w-32 items-center justify-center rounded-full bg-blue-200 text-5xl text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-blue-400 active:scale-95"
+    >
+        🎙️
+    </button>
+
+    <p class="text-lg font-medium text-slate-600">
+        Tap to Start Recording
+    </p>
+
 </div>
 
-{% endblock %} 
+{% endblock %}
 
 {% block scripts %}
 <script src="{{ request.url_for('static', path='js/recording.js') }}"></script>
