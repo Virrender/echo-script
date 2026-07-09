@@ -1,7 +1,5 @@
 from fastapi import Request, UploadFile, File, APIRouter
 
-from fastapi.templating import Jinja2Templates
-
 
 import os
 import uuid
